@@ -64,3 +64,11 @@ button {
   display: inline-block;
   font-size: 25px;
 }
+
+img {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
