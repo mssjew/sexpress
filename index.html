@@ -6,189 +6,513 @@
     <title>Shawarma Express</title>
     <meta name="description" content="Shawarma Express Restaurant">
     <meta name="author" content="Shawarma Express">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+    :root {
+        --primary-color: #e03c31;
+        --primary-dark: #c62828;
+        --secondary-color: #d80764;
+        --secondary-dark: #b1025a;
+        --whatsapp-color: #25D366;
+        --facebook-color: #1877F2;
+        --instagram-color: #C13584;
+        --text-color: #333333;
+        --bg-color: #ffffff;
+        --light-bg: #f8f9fa;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --border-radius: 12px;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
     body {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
         margin: 0;
-        padding: 15px;
-        box-sizing: border-box;
-        text-align: center;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
         max-width: 1200px;
         margin: 0 auto;
+        padding: 20px;
     }
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
+    header {
+        text-align: center;
+        padding: 20px 0;
     }
+
+    .logo {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
     h1 {
-        font-weight: bold;
-        font-size: 1.8em;
-        margin: 15px 0 5px;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin: 20px 0 15px;
+        color: var(--text-color);
     }
-    footer {
-        font-size: 0.9em;
-        margin-top: 30px;
+
+    .location-section {
+        margin: 20px 0;
+        text-align: center;
     }
-    a {
-        font-size: 1.2em;
-        color: #e03c31;
-        text-decoration: none;
-    }
+
     .location-link {
         display: inline-flex;
         align-items: center;
-        background-color: #e03c31;
+        background-color: var(--primary-color);
         color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin-top: 10px;
-        transition: background-color 0.3s ease;
+        padding: 12px 24px;
+        border-radius: var(--border-radius);
+        font-weight: 600;
         text-decoration: none;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
     }
+
     .location-link:hover {
-        background-color: #c62828;
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
     }
+
     .location-icon {
         margin-right: 10px;
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
+
+    .social-section {
+        margin: 25px 0;
+    }
+
     .social-icons {
         display: flex;
         justify-content: center;
-        margin: 15px 0;
+        gap: 15px;
     }
+
     .social-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         color: white;
         text-decoration: none;
-        margin: 0 10px;
-        font-size: 1.5em;
-        transition: opacity 0.3s ease;
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: var(--shadow);
     }
+
     .social-icon:hover {
-        opacity: 0.7;
+        transform: scale(1.1);
     }
+
     .facebook {
-        background: #3B5998;
+        background: var(--facebook-color);
     }
+
     .instagram {
-        background: #C13584;
+        background: var(--instagram-color);
     }
-    button {
-        background-color: #d80764;
+
+    .delivery-section {
+        margin: 30px 0;
+        text-align: center;
+        position: relative;
+        background-color: var(--light-bg);
+        border-radius: var(--border-radius);
+        padding: 25px 15px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+    }
+    
+    .delivery-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+    
+    .delivery-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-color);
+    }
+
+    .foodpanda-img {
+        max-width: 200px;
+        margin-bottom: 25px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .foodpanda-img:hover {
+        transform: scale(1.05);
+    }
+
+    .order-button {
+        background: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
         border: none;
         color: white;
-        padding: 12px 24px;
+        padding: 14px 28px;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
-        font-size: 1.2em;
-        margin: 15px 0;
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 5px auto;
         cursor: pointer;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        max-width: 250px;
+        width: 100%;
     }
-    button:hover {
-        background-color: #b1025a;
+    
+    .order-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--secondary-dark), var(--secondary-color));
+        transition: all 0.4s ease;
+        z-index: -1;
     }
-    img {
-        max-width: 100%;
-        height: auto;
-        margin: 15px 0;
+
+    .order-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(216, 7, 100, 0.3);
     }
+    
+    .order-button:hover::before {
+        left: 0;
+    }
+    
+    .order-icon {
+        margin-right: 8px;
+    }
+
+    .whatsapp-section {
+        margin: 30px 0;
+        text-align: center;
+        position: relative;
+        background-color: rgba(37, 211, 102, 0.1);
+        border-radius: var(--border-radius);
+        padding: 25px 15px;
+        box-shadow: var(--shadow);
+    }
+    
+    .whatsapp-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, #128C7E, var(--whatsapp-color));
+    }
+    
+    .contact-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-color);
+    }
+
     .whatsapp-button {
         display: inline-flex;
         align-items: center;
-        background-color: #128C7E;
+        background: linear-gradient(135deg, var(--whatsapp-color), #128C7E);
         color: white;
-        padding: 10px 20px;
-        text-align: center;
+        padding: 12px 24px;
         text-decoration: none;
-        font-size: 1.2em;
-        margin: 15px 0;
-        cursor: pointer;
-        border-radius: 25px;
-        transition: transform 0.3s ease;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        margin: 0 auto;
+        max-width: 250px;
     }
+    
+    .whatsapp-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #128C7E, var(--whatsapp-color));
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+
     .whatsapp-button:hover {
-        transform: scale(1.05);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
     }
+    
+    .whatsapp-button:hover::before {
+        left: 0;
+    }
+
     .whatsapp-icon {
-        font-size: 1.5em;
+        font-size: 1.5rem;
         margin-right: 10px;
     }
+
     .whatsapp-text {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
+
     .whatsapp-number {
-        font-weight: bold;
+        font-weight: 700;
     }
+
     .chat-text {
-        font-size: 0.8em;
+        font-size: 0.8rem;
+        opacity: 0.9;
     }
+
+    .menu-section {
+        margin: 35px 0;
+        position: relative;
+    }
+    
+    .menu-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--text-color);
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .menu-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        border-radius: 3px;
+    }
+
+    .menu-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 0 auto;
+    }
+
+    .menu-image {
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .menu-image:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .accent-circle {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: rgba(224, 60, 49, 0.05);
+        z-index: 0;
+    }
+    
+    .accent-circle-1 {
+        top: -50px;
+        right: -50px;
+    }
+    
+    .accent-circle-2 {
+        bottom: -30px;
+        left: -30px;
+        background-color: rgba(216, 7, 100, 0.05);
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px 0;
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: #666;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+    
+    footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        border-radius: 3px;
+    }
+
+    /* Animation */
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    
+    .float-animation {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    /* Media Queries */
     @media (min-width: 768px) {
         .menu-images {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
         }
-        .menu-images img {
-            max-width: 45%;
+        
+        .delivery-section, .whatsapp-section {
+            padding: 30px;
+        }
+        
+        .location-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }
 
+    @media (min-width: 992px) {
+        .container {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .delivery-title, .contact-title, .menu-title {
+            font-size: 1.6rem;
+        }
+
+        .logo {
+            max-width: 300px;
+        }
+        
+        .location-link, .order-button, .whatsapp-button {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .foodpanda-img {
+            max-width: 230px;
+        }
+    }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="images/logo.png" alt="Shawarma Express Logo">
+        <header>
+            <img src="images/logo.png" alt="Shawarma Express Logo" class="logo float-animation">
+        </header>
 
-		<h1>Branch Location</h1>
-		<a href="https://maps.app.goo.gl/T1VWy1n8oVMZY4tdA" class="location-link">
-			<i class="fas fa-map-marker-alt location-icon"></i>
-			GT Road Branch
-		</a>
-
-        <div class="social-icons">
-            <a href="https://web.facebook.com/shawarmaexpresspk/" class="social-icon facebook">
-                <i class="fab fa-facebook-f"></i>
+        <section class="location-section">
+            <h1>Branch Location</h1>
+            <a href="https://maps.app.goo.gl/T1VWy1n8oVMZY4tdA" class="location-link">
+                <i class="fas fa-map-marker-alt location-icon"></i>
+                GT Road Branch
             </a>
-            <a href="https://www.instagram.com/shawarmaexpresspk/" class="social-icon instagram">
-                <i class="fab fa-instagram"></i>
+        </section>
+
+        <section class="social-section">
+            <div class="social-icons">
+                <a href="https://web.facebook.com/shawarmaexpresspk/" class="social-icon facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/shawarmaexpresspk/" class="social-icon instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="delivery-section">
+            <h2 class="delivery-title">Order Online</h2>
+            <img src="images/fpweb.png" alt="Food Panda" class="foodpanda-img">
+            <button onclick="location.href='https://foodpanda.page.link/Zjr1sRRmPruEfNMd6'" class="order-button">
+                <i class="fas fa-shopping-cart order-icon"></i>CLICK TO ORDER
+            </button>
+        </section>
+
+        <section class="whatsapp-section">
+            <h2 class="contact-title">Contact Us</h2>
+            <a href="https://api.whatsapp.com/send/?phone=923136830490" class="whatsapp-button">
+                <i class="fab fa-whatsapp whatsapp-icon"></i>
+                <div class="whatsapp-text">
+                    <span class="whatsapp-number">0313-6830490</span>
+                    <span class="chat-text">Click to Chat</span>
+                </div>
             </a>
-        </div>
+        </section>
 
-        <img src="images/fpweb.png" alt="Food Panda">
+        <section class="menu-section">
+            <h2 class="menu-title">Our Menu</h2>
+            <div class="accent-circle accent-circle-1"></div>
+            <div class="accent-circle accent-circle-2"></div>
+            <div class="menu-images">
+                <img src="images/smenu.webp" alt="Menu 1" class="menu-image">
+                <img src="images/smenu2.webp" alt="Menu 2" class="menu-image">
+            </div>
+        </section>
 
-        <button onclick="location.href='https://foodpanda.page.link/Zjr1sRRmPruEfNMd6'">
-            CLICK TO ORDER
-        </button>
-
-		<a href="https://api.whatsapp.com/send/?phone=923136830490" class="whatsapp-button">
-			<i class="fab fa-whatsapp whatsapp-icon"></i>
-			<div class="whatsapp-text">
-				<span class="whatsapp-number">0313-6830490</span>
-				<span class="chat-text">Click to Chat</span>
-			</div>
-		</a>
-
-        <div class="menu-images">
-            <img src="images/smenu.webp" alt="Menu 1">
-            <img src="images/smenu2.webp" alt="Menu 2">
-        </div>
-
-        <footer>© 2024 Shawarma Express WLL</footer>
+        <footer>© 2025 Shawarma Express WLL</footer>
     </div>
 </body>
 </html>
